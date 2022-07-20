@@ -36,9 +36,11 @@ body{
     background-color: var(--red);
     padding: 10px 25px;
     display: inline-block;
-    border: 1px solid var(--red);
     border-radius: 5px;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
     transition: all .4s ease-in-out;
 }
 
@@ -60,6 +62,29 @@ ________________|| Home Start||_____________ */
     overflow: hidden;
 }
 
+.button_home {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.button_home .btn:before {
+    position: absolute;
+    content: "";
+    width: 300px;
+    height: 300px;
+    top: -48px;
+    left: 0;
+    border-radius: 16px;
+    background: #e66c88;
+    transform: translate(-65%, 3%) rotate(64deg);
+    z-index: -1;
+    transition: .4s ease-in-out;
+}
+
+.button_home:hover .btn:before{
+    transform: translateX(-2px)
+}
 
 .home_img img {
     width: 437px;
@@ -79,6 +104,8 @@ ________________|| Home Start||_____________ */
     color: var(--white);
     margin-bottom: 25px;
 }
+
+
 
 /*___________________________________________
 ________________|| Home End||______________ */
@@ -123,6 +150,12 @@ section.blog{
     text-transform: capitalize;
     font-weight: 600;
     font-size: 16px;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.blog_button button a {
+    text-decoration: none;
     color: var(--black);
 }
 
@@ -149,8 +182,12 @@ article.blog_single {
     text-transform: capitalize;
 }
 
-.blog_button button.active {
+.blog_button button.active{
     background: var(--red);
+    color: var(--white);
+}
+
+.blog_button button.active a{
     color: var(--white);
 }
 
@@ -358,6 +395,9 @@ ________________|| laptop Device ||_____________ */
     article.blog_single:last-child {
         display: none;
     }
+    article.group_single:last-child {
+        display: none;
+    }
     
     /* Footer Media Queries */
     .footer_item ul li {
@@ -369,12 +409,98 @@ ________________|| laptop Device ||_____________ */
 /*_______________________________________________
 _____________|| @Media Queries End ||__________ */
 
+/*==============================================
+________________|| Match.Html ||_______________
+===============================================*/
+/*________________________________________________
+________________|| Match Blog Start ||____________*/
 
+.match_item {
+    padding: 28px;
+    border: 1px solid var(---gray);
+    border-radius: 10px;
+}
 
+.match_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
 
+.match_img img {
+    width: 93px;
+    height: auto;
+}
 
+.match_img span {
+    font-weight: 600;
+    font-size: 20px;
+}
 
+.match_info {
+    text-align: center;
+}
 
+.match_info h2 {
+    font-size: 21px;
+    padding-top: 30px;
+}
+
+.match_info p {
+    padding-top: 12px;
+}
+/*________________________________________________
+________________|| Match Blog End||____________*/
+
+/*==============================================
+________________|| Group.Html ||_______________
+===============================================*/
+
+/*________________________________________________
+________________|| Group Blog Start ||____________*/
+
+.group_blog {
+    gap: 18px;
+}
+
+.group_item{
+    cursor: pointer;
+}
+
+.group_area {
+    gap: 35px;
+}
+
+.group_item .group_img img {
+    width: 256px;
+    height: auto;
+    border-radius: 15px;
+    transition: all .3s ease-in-out;
+}
+
+.group_img {
+    overflow: hidden;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.group_item:hover .group_img img{
+    transform: scale(1.2);
+    border-radius: 15px;
+}
+
+.group_info {
+    padding: 10px;
+    text-align: center;
+}
+
+.group_info h2 {
+    font-size: 22px;
+    color: var(--black);
+}
+/*________________________________________________
+________________|| Group Blog End ||____________*/
 
 
 
